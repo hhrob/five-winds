@@ -10,7 +10,7 @@ export default function ContentManager({ onAssetsChange }) {
 
     const handleFileInput = (event) => {
         const file = event.target.files;
-        if (!files) return;
+        if (!file) return;
 
         const newAssets = Array.from(files).map((files) => createAssetFromFile(file));
         updateAssets(newAssets);
@@ -18,8 +18,8 @@ export default function ContentManager({ onAssetsChange }) {
 
     const handleDrop = (e) => {
         e.preventDefault();
-        const files = e.dataTransfer.files;
-        if (!files) return;
+        const file = e.dataTransfer.files;
+        if (!file) return;
 
         const newAssets = Array.from(files).map((file) => createAssetFromFile(file));
         updateAssets(newAssets);
