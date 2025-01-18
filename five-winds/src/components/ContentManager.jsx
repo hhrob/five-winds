@@ -8,6 +8,16 @@ import React, { useState } from "react";
 export default function ContentManager({ onAssetsChange }) {
     const [assets, setAssets] = useState([]); //initialize local state variable with empty array
 
+    function createAssetFromFile(file) {
+        return {
+            id: crypto.randomUUID(),
+            name: file.name,
+            type: file.type,
+            url: URL.createObjectURL(file),
+            size: file.size,
+        };
+    }
+
     const handleFileInput = (event) => {
         const files = event.target.files;
         if (!files) return;
