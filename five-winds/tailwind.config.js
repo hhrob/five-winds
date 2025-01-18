@@ -15,6 +15,9 @@ export default {
     colors: {
       'blue': '#A1C6F6',
       'gray-light': '#B9C5D4',
+      'red': '#FF4C57',
+      'dark-red': '#51181C',
+      'light-blue': '#C9E1FF'
     },
     fontFamily: {
       sans: ['Eras Bold ITC', 'sans-serif'],

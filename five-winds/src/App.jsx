@@ -20,7 +20,7 @@ function Timeline() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 w-full h-16 bg-gray-800 dark:bg-gray-900 text-white flex items-center justify-center border-t border-gray-700 shadow-lg"
+      className="fixed bottom-0 left-0 w-full h-32 bg-light-blue dark:bg-dark-red text-white flex items-center justify-center border-t border-gray-700 shadow-lg"
       onDrop={handleDrop}
       onDragOver={allowDrop}
     >
