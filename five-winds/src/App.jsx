@@ -1,18 +1,15 @@
 // import { useState } from 'react'
+import fwLogo from '../fivewinds.png';
 import './App.css'
+import ContentManager from './components/ContentManager'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <>
-    <h1 className="font-bold">
-      Welcome to Five Winds
-    </h1>
-    <button className="mt-6">
-      Go to content manager
-    </button>
-    </>
+    <div className="flex h-screen">
+     <img src={fwLogo} className="logo scale-150 hover:scale-110" />
+    </div>
     // <>
     //   <div className="flex jusify-center items-center">
     //     <a href="https://vite.dev" target="_blank">
