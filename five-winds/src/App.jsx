@@ -7,8 +7,11 @@ function App() {
   return (
     <>
     <h1 className="font-bold">
-      Welcome to Content Manager
+      Welcome to Five Winds
     </h1>
+    <button className="mt-6">
+      Go to content manager
+    </button>
     </>
     // <>
     //   <div className="flex jusify-center items-center">
