@@ -8,12 +8,17 @@ function App() {
 
   return (
     <>
-      <div className="flex h-screen">
-      <img src={fwLogo} className="logo scale-150 hover:scale-110" />
-      <ContentManager>
-      </ContentManager>
+      <div className="flex flex-col items-center justify-top h-screen">
+        {/* Logo */}
+        <img src={fwLogo} className="logo scale-200 hover:scale-175 mb-6" alt="Five Winds Logo" />
+        
+        {/* ContentManager */}
+        <div className="w-full max-w-md">
+          <ContentManager />
+        </div>
       </div>
     </>
+
     // <>
     //   <div className="flex jusify-center items-center">
     //     <a href="https://vite.dev" target="_blank">
