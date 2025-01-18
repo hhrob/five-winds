@@ -9,19 +9,19 @@ export default function ContentManager({ onAssetsChange }) {
     const [assets, setAssets] = useState([]); //initialize local state variable with empty array
 
     const handleFileInput = (event) => {
-        const file = event.target.files;
-        if (!file) return;
+        const files = event.target.files;
+        if (!files) return;
 
-        const newAssets = Array.from(files).map((files) => createAssetFromFile(file));
+      const newAssets = Array.from(files).map((files) => createAssetFromFile(files));
         updateAssets(newAssets);
     };
 
     const handleDrop = (e) => {
         e.preventDefault();
-        const file = e.dataTransfer.files;
-        if (!file) return;
+        const files = e.dataTransfer.files;
+        if (!files) return;
 
-        const newAssets = Array.from(files).map((file) => createAssetFromFile(file));
+        const newAssets = Array.from(files).map((files) => createAssetFromFile(files));
         updateAssets(newAssets);
     };
 
