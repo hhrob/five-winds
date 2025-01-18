@@ -7,9 +7,13 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <div className="flex h-screen">
-     <img src={fwLogo} className="logo scale-150 hover:scale-110" />
-    </div>
+    <>
+      <div className="flex h-screen">
+      <img src={fwLogo} className="logo scale-150 hover:scale-110" />
+      <ContentManager>
+      </ContentManager>
+      </div>
+    </>
     // <>
     //   <div className="flex jusify-center items-center">
     //     <a href="https://vite.dev" target="_blank">
