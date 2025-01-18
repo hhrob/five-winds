@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import fwLogo from '../fivewinds.png';
 import './App.css'
+import ContentManager from './components/ContentManager'
 
 function App() {
   // const [count, setCount] = useState(0)
