@@ -1,5 +1,6 @@
 // import { useState } from 'react'
-import fwLogo from '../fivewinds.png';
+import fwLogoLight from '../fivewinds.png';
+import fwLogoDark from '../fivewindsDark.png';
 import './App.css'
 import ContentManager from './components/ContentManager'
 
@@ -10,7 +11,16 @@ function App() {
     <>
       <div className="flex flex-col items-center justify-top h-screen">
         {/* Logo */}
-        <img src={fwLogo} className="logo scale-200 hover:scale-175 mb-6" alt="Five Winds Logo" />
+        <img
+        src={fwLogoLight}
+        className="logo scale-175 hover:scale-200 mb-6 dark:hidden" 
+        alt="Five Winds Logo"
+        />
+        <img
+        src={fwLogoDark}
+        className="logo scale-175 hover:scale-200 mb-6 dark:block" 
+        alt="Five Winds Logo"
+        />
         
         {/* ContentManager */}
         <div className="w-full max-w-md">
