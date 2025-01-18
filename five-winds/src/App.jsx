@@ -1,11 +1,13 @@
 // import { useState } from 'react'
 import './App.css'
+import ContentManager from './components/ContentManager'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
+    <ContentManager />
     <h1 className="font-bold">
       Welcome to Five Winds
     </h1>
