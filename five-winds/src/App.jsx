@@ -29,7 +29,7 @@ function App() {
         />
         <img
         src={fwLogoDark}
-        className="logo scale-175 hover:scale-200 mb-6 hidden dark:block transition-all duration-300"
+        className="logo transform scale-175 transition-all duration-300 hover:scale-200 mb-6 hidden dark:block"
         alt="Five Winds Logo"
         />
 

@@ -8,7 +8,7 @@ function Timeline() {
       {/* Tabs (Always Visible) */}
       <div className="flex bg-gray-500 dark:bg-gray-600 px-4">
         <button
-          className={`px-4 py-2 rounded-t-md text-white font-semibold transition-all duration-200 ${
+          className={`px-4 py-2 rounded-t-md font-semibold transition-all duration-200 ${
             activeTab === "timeline"
               ? "bg-gray-700 dark:bg-gray-800 border-blue dark:border-red"
               : "hover:bg-gray-600 dark:hover:bg-gray-700 hover:border-blue dark:hover:border-red"
@@ -18,7 +18,7 @@ function Timeline() {
           Timeline
         </button>
         <button
-          className={`px-4 py-2 rounded-t-md text-white font-semibold transition-all duration-200 ${
+          className={`px-4 py-2 rounded-t-md font-semibold transition-all duration-200 ${
             activeTab === "options"
               ? "bg-gray-700 dark:bg-gray-800 border-blue dark:border-red"
               : "hover:bg-gray-600 dark:hover:bg-gray-700 hover:border-blue dark:hover:border-red"
