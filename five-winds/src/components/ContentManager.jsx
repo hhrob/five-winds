@@ -85,10 +85,10 @@ export default function ContentManager({ onAssetsChange }) {
       <div
         onClick={openFileDialog}
         className="
-          w-12 h-12 flex items-center justify-center 
+          w-12 h-12 flex items-center justify-center
           bg-light-blue hover:bg-blue
           dark:hover:bg-red dark:bg-dark-red
-          text-2xl font-bold text-gray-600 
+          text-2xl font-bold text-gray-600
           rounded cursor-pointer
           transition-all duration-300
         "
@@ -119,7 +119,7 @@ export default function ContentManager({ onAssetsChange }) {
             {/* Hover overlay for remove button */}
             <div
               className="
-                absolute inset-0
+                absolute inset-10
                 bg-black bg-opacity-50
                 opacity-0 hover:opacity-100
                 flex items-center justify-center
