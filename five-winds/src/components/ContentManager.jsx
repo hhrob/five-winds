@@ -98,7 +98,7 @@ export default function ContentManager({ onAssetsChange }) {
       {/* Preview Gallery */}
       <div className="relative w-48 h-48">
         {assets.map((asset) => (
-          <div key={asset.id} className="bg-white shadow p-2 rounded">
+          <div key={asset.id} className="p-2 rounded">
             <p className="font-semibold text-sm truncate">{asset.name}</p>
 
             {asset.type.startsWith("video") ? (
@@ -117,22 +117,14 @@ export default function ContentManager({ onAssetsChange }) {
             )}
 
             {/* Hover overlay for remove button */}
-            <div
-              className="
-                absolute inset-10
-                bg-black bg-opacity-50
-                opacity-0 hover:opacity-100
-                flex items-center justify-center
-                transition-opacity
-              "
-            >
+            <div>
               <button
                 onClick={() => {
                   if (window.confirm(`Remove ${asset.name}?`)) {
                     removeAsset(asset.id);
                   }
                 }}
-                className="bg-red-500 text-white px-4 py-2 rounded text-base hover:bg-red-600"
+                className="bg-light-blue hover:bg-blue dark:bg-dark-red dark:hover:bg-red transition-colors duration-300 px-4 py-2 rounded text-base hover:bg-red-600 mt-2"
               >
                 Remove
               </button>

@@ -30,7 +30,7 @@ function Timeline() {
       </div>
 
       {/* Content Area (Switches Based on Tab) */}
-      <div className="h-80 transition-all duration-300 bg-light-blue dark:bg-dark-red text-white border-t border-gray-500 shadow-lg flex items-center justify-center">
+      <div className="h-80 transition-all duration-300 bg-light-blue dark:bg-dark-red border-t border-gray-500 shadow-lg flex items-center justify-center">
         {activeTab === "timeline" ? (
           <div className="flex gap-4 px-4 overflow-x-auto max-w-screen-lg w-full">
             <p className="text-white">🎬 Drop content here</p>
