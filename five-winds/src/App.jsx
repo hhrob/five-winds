@@ -3,7 +3,7 @@ import fwLogoLight from '../fivewinds.png';
 import fwLogoDark from '../fivewindsDark.png';
 import './App.css'
 import ContentManager from './components/ContentManager'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Timeline() {
   const [items, setItems] = useState([]);
@@ -35,11 +35,21 @@ function Timeline() {
   );
 }
 
+
 function App() {
   // const [count, setCount] = useState(0)
+  useEffect(() => {
+    // Disable scrolling
+    document.body.style.overflow = 'hidden';
+    return () => {
+      // Re-enable scrolling on cleanup
+      document.body.style.overflow = '';
+    };
+  }, []);
+
 
   return (
-    <>
+    <div>
       <div className="flex flex-col items-center justify-top h-screen">
         {/* Logo */}
         <img
@@ -61,7 +71,7 @@ function App() {
           {/* Timeline */}
           <Timeline />
       </div>
-    </>
+    </div>
 
     // <>
     //   <div className="flex jusify-center items-center">
