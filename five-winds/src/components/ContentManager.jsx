@@ -6,7 +6,7 @@ import React, { useState, useRef } from "react";
  */
 export default function ContentManager({ onAssetsChange }) {
   const [assets, setAssets] = useState([]); //initialize local state variable with empty array
-
+  const [timelineAssets, setTimelineAssets] = useState([]); // For assets in the timeline
   const fileInputRef = useRef(null);
 
   function createAssetFromFile(file) {
@@ -23,7 +23,7 @@ export default function ContentManager({ onAssetsChange }) {
     const files = event.target.files;
     if (!files) return;
 
-    const newAssets = Array.from(files).map((files) => createAssetFromFile(files));
+    const newAssets = Array.from(files).map((file) => createAssetFromFile(file));
     updateAssets(newAssets);
   };
 
@@ -32,7 +32,7 @@ export default function ContentManager({ onAssetsChange }) {
     const files = e.dataTransfer.files;
     if (!files) return;
 
-    const newAssets = Array.from(files).map((files) => createAssetFromFile(files));
+    const newAssets = Array.from(files).map((file) => createAssetFromFile(file));
     updateAssets(newAssets);
   };
 
@@ -68,6 +68,16 @@ export default function ContentManager({ onAssetsChange }) {
     }
   };
 
+  // Add asset to timeline on drop
+  const handleTimelineDrop = (e) => {
+    e.preventDefault();
+    const assetId = e.dataTransfer.getData("assetId");
+    const asset = assets.find((a) => a.id === assetId);
+    if (asset && !timelineAssets.find((a) => a.id === assetId)) {
+      setTimelineAssets((prev) => [...prev, asset]);
+    }
+  };
+
   return (
     <div className="p-4">
 
@@ -95,10 +105,15 @@ export default function ContentManager({ onAssetsChange }) {
         +
       </div>
 
-      {/* Preview Gallery (grid to align items in a row) */}
-      <div className="flex flex-wrap gap-4 w-screen">
+      {/* Preview Gallery */}
+      <div className="flex flex-wrap gap-4 w-screen pt-4 pb-128">
         {assets.map((asset) => (
-          <div key={asset.id} className=" dark:bg-gray-900 shadow-lg dark:shadow-none p-2 rounded w-32">
+          <div
+            key={asset.id}
+            className="dark:bg-gray-900 shadow-lg dark:shadow-none p-2 rounded w-32"
+            draggable
+            onDragStart={(e) => e.dataTransfer.setData("assetId", asset.id)} // Set asset ID on drag start
+          >
             <p className="font-semibold text-sm truncate">{asset.name}</p>
 
             {asset.type.startsWith("video") ? (
@@ -119,8 +134,8 @@ export default function ContentManager({ onAssetsChange }) {
             {/* Hover overlay for remove button */}
             <div className="mt-2 text-center">
               <button
-                onClick={() => {
-                  if (window.confirm(`Remove ${asset.name}?`)) {
+                onClick={(e) => {
+                  if (e.ctrlKey || window.confirm(`Remove ${asset.name}?`)) {
                     removeAsset(asset.id);
                   }
                 }}
