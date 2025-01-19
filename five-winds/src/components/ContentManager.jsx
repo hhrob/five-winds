@@ -70,12 +70,13 @@ export default function ContentManager({ onAssetsChange }) {
     };
 
   return (
-      <div className="p-4 space-y-4">
-       {/* Hidden file input */}
+    <div className="p-4">
+
+      {/* Hidden file input */}
       <input
         type="file"
         multiple
-        accept="image/*, video/mp4"
+        accept="image/*,video/mp4"
         ref={fileInputRef}
         onChange={handleFileInput}
         style={{ display: "none" }} // Hide the input
@@ -103,7 +104,7 @@ export default function ContentManager({ onAssetsChange }) {
             {asset.type.startsWith("video") ? (
               <video
                 src={asset.url}
-                className="mt-2 w-full h-32 object-cover"
+                className="w-full h-full object-cover"
                 controls
                 muted
               />
@@ -111,32 +112,31 @@ export default function ContentManager({ onAssetsChange }) {
               <img
                 src={asset.url}
                 alt={asset.name}
-                className="mt-2 w-full h-32 object-cover"
+                className="w-full h-full object-cover"
               />
-            )};
+            )}
 
-{/* Hover Overlay */}
-<div
-  className="
-    absolute inset-0 
-    bg-black bg-opacity-50 
-    opacity-0 hover:opacity-100 
-    flex items-center justify-center
-    transition-opacity
-  "
->
-  <button
-    onClick={() => {
-      if (window.confirm("Are you sure you want to remove this?")) {
-        removeAsset(asset.id);
-      }
-    }}
-    className="bg-red-500 text-white px-4 py-2 rounded text-base hover:bg-red-600"
-  >
-    Remove
-  </button>
-</div>
-
+            {/* Hover overlay for remove button */}
+            <div
+              className="
+                absolute inset-0
+                bg-black bg-opacity-50
+                opacity-0 hover:opacity-100
+                flex items-center justify-center
+                transition-opacity
+              "
+            >
+              <button
+                onClick={() => {
+                  if (window.confirm(`Remove ${asset.name}?`)) {
+                    removeAsset(asset.id);
+                  }
+                }}
+                className="bg-red-500 text-white px-4 py-2 rounded text-base hover:bg-red-600"
+              >
+                Remove
+              </button>
+            </div>
           </div>
         ))}
       </div>
