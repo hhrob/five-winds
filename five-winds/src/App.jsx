@@ -34,7 +34,7 @@ function App() {
         />
 
         {/* ContentManager */}
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md mt-20 absolute left-0">
           <ContentManager />
         </div>
           
