@@ -63,38 +63,6 @@ export default function ContentManager({ onAssetsChange }) {
         });
     };
 
-<<<<<<< HEAD
-    const openFileDialog = () => {
-        if (fileInputRef.current) {
-            fileInputRef.current.click();
-        }
-    };
-
-  return (
-    <div className="p-4 space-y-4">
-      {/* Hidden file input */}
-      <input
-        type="file"
-        multiple
-        accept="image/*, video/mp4"
-        ref={fileInputRef}
-        onChange={handleFileInput}
-        style={{ display: "none" }} // Hide the input
-      />
-
-      {/* Plus Box (button or div) */}
-      <div
-        onClick={openFileDialog}
-        className="
-          w-12 h-12 flex items-center justify-center 
-          bg-gray-200 hover:bg-gray-300 
-          text-2xl font-bold text-gray-600 
-          rounded cursor-pointer
-        "
-      >
-        +
-      </div>
-=======
     return (
     <div className="p-4">
         {/* File Input */}
@@ -108,7 +76,6 @@ export default function ContentManager({ onAssetsChange }) {
             className="cursor-pointer border p-2"
         />
         </div>
->>>>>>> refs/remotes/origin/main
 
       {/* Preview Gallery */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -147,4 +114,3 @@ export default function ContentManager({ onAssetsChange }) {
     </div>
   );
 }
-
