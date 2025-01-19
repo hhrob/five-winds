@@ -70,40 +70,51 @@ export default function ContentManager({ onAssetsChange }) {
     };
 
   return (
-      <div className="p-4 space-y-4">
-       {/* Hidden file input */}
+    <div className="p-4">
+
+      {/* Hidden file input */}
       <input
         type="file"
         multiple
-        accept="image/*, video/mp4"
+        accept="image/*,video/mp4"
         ref={fileInputRef}
         onChange={handleFileInput}
-        style={{ display: "none" }} // Hide the input
+        className="hidden"
       />
-         {/* Plus Box (button or div) */}
-      <div
-        onClick={openFileDialog}
-        className="
-          w-12 h-12 flex items-center justify-center 
-          bg-light-blue hover:bg-blue
-          dark:hover:bg-red dark:bg-dark-red
-          text-2xl font-bold text-gray-600 
-          rounded cursor-pointer
-          transition-all duration-300
-        "
-      >
-        +
-      </div>
-      {/* Preview Gallery */}
-      <div className="relative w-48 h-48 bg-white">
-        {assets.map((asset) => (
-          <div key={asset.id} className="bg-white shadow p-2 rounded">
-            <p className="font-semibold text-sm truncate">{asset.name}</p>
 
+      {/* 
+        Container: 
+        - "flex" to place items side by side
+        - "flex-nowrap" so they don't wrap to a new line (they will horizontally scroll if overflow)
+        OR 
+        - "flex-wrap" if you want them to go to the next line when running out of space
+      */}
+      <div className="flex flex-wrap gap-4 items-start">
+
+        {/* Plus button (first item in the row) */}
+        <div
+          onClick={openFileDialog}
+          className="
+            w-12 h-12 flex items-center justify-center 
+            bg-blue-200 hover:bg-blue-300
+            text-2xl font-bold text-gray-700 
+            rounded cursor-pointer
+            transition-all duration-300
+          "
+        >
+          +
+        </div>
+
+        {/* Map over assets to display each as a separate item */}
+        {assets.map((asset) => (
+          <div
+            key={asset.id}
+            className="relative w-48 h-48 bg-white shadow rounded overflow-hidden"
+          >
             {asset.type.startsWith("video") ? (
               <video
                 src={asset.url}
-                className="mt-2 w-full h-32 object-cover"
+                className="w-full h-full object-cover"
                 controls
                 muted
               />
@@ -111,35 +122,35 @@ export default function ContentManager({ onAssetsChange }) {
               <img
                 src={asset.url}
                 alt={asset.name}
-                className="mt-2 w-full h-32 object-cover"
+                className="w-full h-full object-cover"
               />
-            )};
+            )}
 
-{/* Hover Overlay */}
-<div
-  className="
-    absolute inset-0 
-    bg-black bg-opacity-50 
-    opacity-0 hover:opacity-100 
-    flex items-center justify-center
-    transition-opacity
-  "
->
-  <button
-    onClick={() => {
-      if (window.confirm("Are you sure you want to remove this?")) {
-        removeAsset(asset.id);
-      }
-    }}
-    className="bg-red-500 text-white px-4 py-2 rounded text-base hover:bg-red-600"
-  >
-    Remove
-  </button>
-</div>
-
+            {/* Hover overlay for remove button */}
+            <div
+              className="
+                absolute inset-0
+                bg-black bg-opacity-50
+                opacity-0 hover:opacity-100
+                flex items-center justify-center
+                transition-opacity
+              "
+            >
+              <button
+                onClick={() => {
+                  if (window.confirm(`Remove ${asset.name}?`)) {
+                    removeAsset(asset.id);
+                  }
+                }}
+                className="bg-red-500 text-white px-4 py-2 rounded text-base hover:bg-red-600"
+              >
+                Remove
+              </button>
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
