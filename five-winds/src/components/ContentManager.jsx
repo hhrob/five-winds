@@ -95,7 +95,7 @@ export default function ContentManager({ onAssetsChange }) {
         +
       </div>
       {/* Preview Gallery */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="relative w-48 h-48 bg-white">
         {assets.map((asset) => (
           <div key={asset.id} className="bg-white shadow p-2 rounded">
             <p className="font-semibold text-sm truncate">{asset.name}</p>
@@ -113,18 +113,30 @@ export default function ContentManager({ onAssetsChange }) {
                 alt={asset.name}
                 className="mt-2 w-full h-32 object-cover"
               />
-            )}
+            )};
 
-            <p className="text-xs mt-1">
-              {(asset.size / (1024 * 1024)).toFixed(2)} MB
-            </p>
+{/* Hover Overlay */}
+<div
+  className="
+    absolute inset-0 
+    bg-black bg-opacity-50 
+    opacity-0 hover:opacity-100 
+    flex items-center justify-center
+    transition-opacity
+  "
+>
+  <button
+    onClick={() => {
+      if (window.confirm("Are you sure you want to remove this?")) {
+        removeAsset(asset.id);
+      }
+    }}
+    className="bg-red-500 text-white px-4 py-2 rounded text-base hover:bg-red-600"
+  >
+    Remove
+  </button>
+</div>
 
-            <button
-              onClick={() => removeAsset(asset.id)}
-              className="mt-2 bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600"
-            >
-              Remove
-            </button>
           </div>
         ))}
       </div>
