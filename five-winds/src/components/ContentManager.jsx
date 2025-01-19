@@ -47,10 +47,10 @@ export default function ContentManager({ onAssetsChange }) {
         });
     }
 
-    const removeAsset = (assetId) => { 
+    const removeAsset = (assetId) => {
         setAssets((prev) => {
             const assetToRemove = prev.find((a) => a.id === assetId);
-            
+
             if (assetToRemove) {
                 URL.revokeObjectURL(assetToRemove.url);
             }
@@ -63,6 +63,7 @@ export default function ContentManager({ onAssetsChange }) {
         });
     };
 
+<<<<<<< HEAD
     const openFileDialog = () => {
         if (fileInputRef.current) {
             fileInputRef.current.click();
@@ -93,6 +94,21 @@ export default function ContentManager({ onAssetsChange }) {
       >
         +
       </div>
+=======
+    return (
+    <div className="p-4">
+        {/* File Input */}
+        <div className="flex flex-col items-start space-y-2">
+        <label className="font-semibold">Upload Files</label>
+        <input
+            type="file"
+            multiple
+            accept="image/*, video/mp4"
+            onChange={handleFileInput}
+            className="cursor-pointer border p-2"
+        />
+        </div>
+>>>>>>> refs/remotes/origin/main
 
       {/* Preview Gallery */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

@@ -3,65 +3,77 @@ import fwLogoLight from '../fivewinds.png';
 import fwLogoDark from '../fivewindsDark.png';
 import './App.css'
 import ContentManager from './components/ContentManager'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Timeline() {
-  const [items, setItems] = useState([]);
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    const item = e.dataTransfer.getData("text");
-    if (item) {
-      setItems([...items, item]);
-    }
-  };
-
-  const allowDrop = (e) => e.preventDefault();
+function BottomBar() {
+  const [activeTab, setActiveTab] = useState("timeline"); // "timeline" or "options"
 
   return (
-    <div
-      className="fixed bottom-0 left-0 w-full h-32 bg-light-blue dark:bg-dark-red text-white flex items-center justify-center border-t border-gray-700 shadow-lg"
-      onDrop={handleDrop}
-      onDragOver={allowDrop}
-    >
-      <div className="flex gap-4 px-4 overflow-x-auto">
-        {items.map((item, index) => (
-          <div key={index} className="p-2 bg-gray-700 rounded-md shadow">
-            {item}
+    <div className="fixed bottom-0 left-0 w-full">
+      {/* Tab Button (Like a Browser Tab) */}
+      <div className="flex items-center bg-gray-500 dark:bg-gray-600 px-4 py-2 rounded-t-md w-fit cursor-pointer"
+        onClick={() => setActiveTab(activeTab === "timeline" ? "options" : "timeline")}
+      >
+        <span className="text-white text-sm font-semibold">
+          {activeTab === "timeline" ? "Options" : "Timeline"}
+        </span>
+      </div>
+
+      {/* Content Area (Changes Based on Tab) */}
+      <div className={`h-80 transition-all duration-300 bg-light-blue dark:bg-dark-red text-white border-t border-gray-500 shadow-lg flex items-center justify-center`}>
+        {activeTab === "timeline" ? (
+          <div className="flex gap-4 px-4 overflow-x-auto max-w-screen-lg w-full">
+            <p className="text-white">🎬 Drop content here</p>
           </div>
-        ))}
+        ) : (
+          <div className="flex flex-col items-start p-4">
+            <h3 className="text-lg font-bold">⚙️ Options</h3>
+            <button className="mt-2 p-2 bg-blue-500 rounded-md text-white">Option 1</button>
+            <button className="mt-2 p-2 bg-blue-500 rounded-md text-white">Option 2</button>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
+
 function App() {
   // const [count, setCount] = useState(0)
+  useEffect(() => {
+    // Disable scrolling
+    document.body.style.overflow = 'hidden';
+    return () => {
+      // Re-enable scrolling on cleanup
+      document.body.style.overflow = '';
+    };
+  }, []);
+
 
   return (
-    <>
+    <div>
       <div className="flex flex-col items-center justify-top h-screen">
         {/* Logo */}
         <img
         src={fwLogoLight}
-        className="logo scale-175 hover:scale-200 mb-6 dark:hidden" 
+        className="logo scale-175 hover:scale-200 mb-6 dark:hidden"
         alt="Five Winds Logo"
         />
         <img
         src={fwLogoDark}
-        className="logo scale-175 hover:scale-200 mb-6 hidden dark:block" 
+        className="logo scale-175 hover:scale-200 mb-6 hidden dark:block"
         alt="Five Winds Logo"
         />
-        
+
         {/* ContentManager */}
         <div className="w-full max-w-md">
           <ContentManager />
         </div>
           
-          {/* Timeline */}
-          <Timeline />
+          {/* BottomBar */}
+          <BottomBar />
       </div>
-    </>
+    </div>
 
     // <>
     //   <div className="flex jusify-center items-center">
