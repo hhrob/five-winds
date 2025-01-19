@@ -10,8 +10,8 @@ function Timeline() {
         <button
           className={`px-4 py-2 rounded-t-md text-white font-semibold transition-all duration-200 ${
             activeTab === "timeline"
-              ? "bg-gray-700 dark:bg-gray-800 border-b-2 border-blue-500"
-              : "hover:bg-gray-600 dark:hover:bg-gray-700"
+              ? "bg-gray-700 dark:bg-gray-800 border-blue dark:border-red"
+              : "hover:bg-gray-600 dark:hover:bg-gray-700 hover:border-blue dark:hover:border-red"
           }`}
           onClick={() => setActiveTab("timeline")}
         >
@@ -20,8 +20,8 @@ function Timeline() {
         <button
           className={`px-4 py-2 rounded-t-md text-white font-semibold transition-all duration-200 ${
             activeTab === "options"
-              ? "bg-gray-700 dark:bg-gray-800 border-b-2 border-blue-500"
-              : "hover:bg-gray-600 dark:hover:bg-gray-700"
+              ? "bg-gray-700 dark:bg-gray-800 border-blue dark:border-red"
+              : "hover:bg-gray-600 dark:hover:bg-gray-700 hover:border-blue dark:hover:border-red"
           }`}
           onClick={() => setActiveTab("options")}
         >

@@ -24,12 +24,12 @@ function App() {
         {/* Logo */}
         <img
         src={fwLogoLight}
-        className="logo scale-175 hover:scale-200 mb-6 dark:hidden"
+        className="logo transform scale-175 hover:scale-200 dark:hidden"
         alt="Five Winds Logo"
         />
         <img
         src={fwLogoDark}
-        className="logo scale-175 hover:scale-200 mb-6 hidden dark:block"
+        className="logo scale-175 hover:scale-200 mb-6 hidden dark:block transition-all duration-300"
         alt="Five Winds Logo"
         />
 

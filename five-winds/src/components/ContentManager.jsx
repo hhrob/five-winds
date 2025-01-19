@@ -89,6 +89,7 @@ export default function ContentManager({ onAssetsChange }) {
           dark:hover:bg-red dark:bg-dark-red
           text-2xl font-bold text-gray-600 
           rounded cursor-pointer
+          transition-all duration-300
         "
       >
         +
