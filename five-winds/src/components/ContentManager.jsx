@@ -87,7 +87,7 @@ export default function ContentManager({ onAssetsChange }) {
           w-12 h-12 flex items-center justify-center
           bg-light-blue hover:bg-blue
           dark:hover:bg-red dark:bg-dark-red
-          text-2xl font-bold text-gray-600
+          text-2xl font-bold
           rounded cursor-pointer
           transition-all duration-300
         "
