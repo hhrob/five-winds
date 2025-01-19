@@ -79,7 +79,7 @@ export default function ContentManager({ onAssetsChange }) {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 pl-10">
 
       {/* Hidden file input */}
       <input
@@ -131,6 +131,15 @@ export default function ContentManager({ onAssetsChange }) {
               />
             )}
 
+            <div className="mt-2 text-center">
+              <button
+                onClick={(e) => {
+                  
+                }}
+                className="bg-light-blue hover:bg-blue dark:bg-dark-red dark:hover:bg-red transition-colors duration-300 px-4 py-2 rounded text-base hover:bg-red-600"
+              >
+                Add to Timeline
+              </button>
             {/* Hover overlay for remove button */}
             <div className="mt-2 text-center">
               <button
@@ -143,6 +152,7 @@ export default function ContentManager({ onAssetsChange }) {
               >
                 Remove
               </button>
+            </div>
             </div>
           </div>
         ))}
