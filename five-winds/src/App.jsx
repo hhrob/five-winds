@@ -56,15 +56,15 @@ function App() {
         {/* Logo */}
         <img
         src={fwLogoLight}
-        className="logo scale-175 hover:scale-200 mb-6 dark:hidden" 
+        className="logo scale-175 hover:scale-200 mb-6 dark:hidden"
         alt="Five Winds Logo"
         />
         <img
         src={fwLogoDark}
-        className="logo scale-175 hover:scale-200 mb-6 hidden dark:block" 
+        className="logo scale-175 hover:scale-200 mb-6 hidden dark:block"
         alt="Five Winds Logo"
         />
-        
+
         {/* ContentManager */}
         <div className="w-full max-w-md">
           <ContentManager />
