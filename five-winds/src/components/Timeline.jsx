@@ -30,16 +30,16 @@ function Timeline() {
       </div>
 
       {/* Content Area (Switches Based on Tab) */}
-      <div className="h-80 transition-all duration-300 bg-light-blue dark:bg-dark-red border-t shadow-lg flex items-center justify-center">
+      <div className="h-80 transition-all duration-300 bg-blue dark:bg-dark-red border-t shadow-lg flex items-center justify-center">
         {activeTab === "timeline" ? (
           <div className="flex gap-4 px-4 overflow-x-auto max-w-screen-lg w-full">
-            <p className="text-white">🎬 Drop content here</p>
+            <p>🎬 Drop content here</p>
           </div>
         ) : (
           <div className="flex flex-col items-start p-4">
             <h3 className="text-lg font-bold">⚙️ Options</h3>
-            <button className="mt-2 p-2 bg-blue-500 rounded-md text-white">Option 1</button>
-            <button className="mt-2 p-2 bg-blue-500 rounded-md text-white">Option 2</button>
+            <button className="mt-2 p-2 bg-light-blue hover:bg-blue hover:shadow-lg transition-colors duration-300 rounded-md">Option 1</button>
+            <button className="mt-2 p-2 bg-light-blue hover:bg-blue hover:shadow-lg transition-colors duration-300 rounded-md">Option 2</button>
           </div>
         )}
       </div>
