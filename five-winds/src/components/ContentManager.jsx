@@ -70,7 +70,7 @@ export default function ContentManager({ onAssetsChange }) {
     };
 
   return (
-      <div className="p-4 space-y-4 content-start">
+      <div className="p-4 space-y-4">
        {/* Hidden file input */}
       <input
         type="file"
@@ -89,6 +89,7 @@ export default function ContentManager({ onAssetsChange }) {
           dark:hover:bg-red dark:bg-dark-red
           text-2xl font-bold text-gray-600 
           rounded cursor-pointer
+          transition-all duration-300
         "
       >
         +
