@@ -20,6 +20,18 @@ export default {
       'light-blue': '#C9E1FF', // for light mode
       'white': '#FFFFFF',
       'black': '#242424',
+      'gray': {
+        50: '#f9fafb',
+        100: '#f4f5f7',
+        200: '#e5e7eb',
+        300: '#d2d6dc',
+        400: '#9fa6b2',
+        500: '#6b7280',
+        600: '#4b5563',
+        700: '#374151',
+        800: '#1f2937',
+        900: '#111827',
+      },
     },
     fontFamily: {
       sans: ['Eras Bold ITC', 'sans-serif'],
