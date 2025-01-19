@@ -13,11 +13,11 @@ export default {
       xl: '1440px',
     },
     colors: {
-      'blue': '#A1C6F6',
-      'gray-light': '#B9C5D4',
-      'red': '#FF4C57',
-      'dark-red': '#51181C',
-      'light-blue': '#C9E1FF'
+      'blue': '#A1C6F6', // for light mode matches logo
+      'light-gray': '#B9C5D4', // matches logo
+      'red': '#FF4C57', // for dark mode matches logo
+      'dark-red': '#51181C', // for dark mode
+      'light-blue': '#C9E1FF' // for light mode
     },
     fontFamily: {
       sans: ['Eras Bold ITC', 'sans-serif'],
