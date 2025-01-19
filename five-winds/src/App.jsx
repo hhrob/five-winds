@@ -8,14 +8,6 @@ import { useState, useEffect } from "react";
 
 function App() {
   // const [count, setCount] = useState(0)
-  useEffect(() => {
-    // Disable scrolling
-    document.body.style.overflow = 'hidden';
-    return () => {
-      // Re-enable scrolling on cleanup
-      document.body.style.overflow = '';
-    };
-  }, []);
 
 
   return (
