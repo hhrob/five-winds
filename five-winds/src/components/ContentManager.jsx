@@ -95,7 +95,7 @@ export default function ContentManager({ onAssetsChange }) {
         +
       </div>
       {/* Preview Gallery */}
-      <div className="relative w-48 h-48 bg-white">
+      <div className="relative w-48 h-48">
         {assets.map((asset) => (
           <div key={asset.id} className="bg-white shadow p-2 rounded">
             <p className="font-semibold text-sm truncate">{asset.name}</p>
