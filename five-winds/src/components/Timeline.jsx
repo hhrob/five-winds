@@ -6,12 +6,12 @@ function Timeline() {
   return (
     <div className="fixed bottom-0 left-0 w-full">
       {/* Tabs (Always Visible) */}
-      <div className="flex bg-gray-500 dark:bg-gray-600 px-4">
+      <div className="flex px-4">
         <button
           className={`px-4 py-2 rounded-t-md font-semibold transition-all duration-200 ${
             activeTab === "timeline"
-              ? "bg-gray-700 dark:bg-gray-800 border-blue dark:border-red"
-              : "hover:bg-gray-600 dark:hover:bg-gray-700 hover:border-blue dark:hover:border-red"
+              ? " border-blue dark:border-red"
+              : " hover:border-blue dark:hover:border-red"
           }`}
           onClick={() => setActiveTab("timeline")}
         >
@@ -20,8 +20,8 @@ function Timeline() {
         <button
           className={`px-4 py-2 rounded-t-md font-semibold transition-all duration-200 ${
             activeTab === "options"
-              ? "bg-gray-700 dark:bg-gray-800 border-blue dark:border-red"
-              : "hover:bg-gray-600 dark:hover:bg-gray-700 hover:border-blue dark:hover:border-red"
+              ? " border-blue dark:border-red"
+              : " hover:border-blue dark:hover:border-red"
           }`}
           onClick={() => setActiveTab("options")}
         >
@@ -30,7 +30,7 @@ function Timeline() {
       </div>
 
       {/* Content Area (Switches Based on Tab) */}
-      <div className="h-80 transition-all duration-300 bg-light-blue dark:bg-dark-red border-t border-gray-500 shadow-lg flex items-center justify-center">
+      <div className="h-80 transition-all duration-300 bg-light-blue dark:bg-dark-red border-t shadow-lg flex items-center justify-center">
         {activeTab === "timeline" ? (
           <div className="flex gap-4 px-4 overflow-x-auto max-w-screen-lg w-full">
             <p className="text-white">🎬 Drop content here</p>
