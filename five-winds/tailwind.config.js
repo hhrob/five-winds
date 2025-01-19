@@ -17,7 +17,9 @@ export default {
       'light-gray': '#B9C5D4', // matches logo
       'red': '#FF4C57', // for dark mode matches logo
       'dark-red': '#51181C', // for dark mode
-      'light-blue': '#C9E1FF' // for light mode
+      'light-blue': '#C9E1FF', // for light mode
+      'white': '#FFFFFF',
+      'black': '#242424',
     },
     fontFamily: {
       sans: ['Eras Bold ITC', 'sans-serif'],
@@ -34,7 +36,7 @@ export default {
       scale: {
         '200': '2',
         '175': '1.75'
-      }
+      },
     }
   },
   plugins: [],
