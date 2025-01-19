@@ -98,7 +98,7 @@ export default function ContentManager({ onAssetsChange }) {
       {/* Preview Gallery (grid to align items in a row) */}
       <div className="grid grid-cols-10 gap-4 w-max">
         {assets.map((asset) => (
-          <div key={asset.id} className="bg-gray-50 dark:bg-gray-50 shadow-lg dark:shadow-none p-2 rounded w-32">
+          <div key={asset.id} className=" dark:bg-gray-900 shadow-lg dark:shadow-none p-2 rounded w-32">
             <p className="font-semibold text-sm truncate">{asset.name}</p>
 
             {asset.type.startsWith("video") ? (
