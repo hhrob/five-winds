@@ -6,7 +6,7 @@ function Timeline() {
   return (
     <div className="fixed bottom-0 left-0 w-full">
       {/* Tabs (Always Visible) */}
-      <div className="flex px-4">
+      <div className="px-4 flex">
         <button
           className={`px-4 py-2 rounded-t-md font-semibold transition-all duration-200 ${
             activeTab === "timeline"

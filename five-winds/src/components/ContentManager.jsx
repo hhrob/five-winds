@@ -96,7 +96,7 @@ export default function ContentManager({ onAssetsChange }) {
       </div>
 
       {/* Preview Gallery (grid to align items in a row) */}
-      <div className="grid grid-cols-10 gap-4 w-max">
+      <div className="flex flex-wrap gap-4 w-screen">
         {assets.map((asset) => (
           <div key={asset.id} className=" dark:bg-gray-900 shadow-lg dark:shadow-none p-2 rounded w-32">
             <p className="font-semibold text-sm truncate">{asset.name}</p>
