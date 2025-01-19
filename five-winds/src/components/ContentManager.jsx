@@ -45,10 +45,10 @@ export default function ContentManager({ onAssetsChange }) {
         });
     }
 
-    const removeAsset = (assetId) => { 
+    const removeAsset = (assetId) => {
         setAssets((prev) => {
             const assetToRemove = prev.find((a) => a.id === assetId);
-            
+
             if (assetToRemove) {
                 URL.revokeObjectURL(assetToRemove.url);
             }
@@ -60,11 +60,6 @@ export default function ContentManager({ onAssetsChange }) {
             return filtered;
         });
     };
-
-            return filtered;
-        });
-    };
-
 
     return (
     <div className="p-4">
