@@ -20,7 +20,7 @@ function BottomBar() {
       </div>
 
       {/* Content Area (Changes Based on Tab) */}
-      <div className={`h-96 transition-all duration-300 bg-light-blue dark:bg-dark-red text-white border-t border-gray-500 shadow-lg flex items-center justify-center`}>
+      <div className={`h-80 transition-all duration-300 bg-light-blue dark:bg-dark-red text-white border-t border-gray-500 shadow-lg flex items-center justify-center`}>
         {activeTab === "timeline" ? (
           <div className="flex gap-4 px-4 overflow-x-auto max-w-screen-lg w-full">
             <p className="text-white">🎬 Drop content here</p>
