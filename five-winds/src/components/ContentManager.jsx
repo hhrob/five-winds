@@ -45,10 +45,22 @@ export default function ContentManager({ onAssetsChange }) {
         });
     }
 
-    const removeAsset = (assetId) => {
+    const removeAsset = (assetId) => { 
         setAssets((prev) => {
+            const assetToRemove = prev.find((a) => a.id === assetId);
+            
+            if (assetToRemove) {
+                URL.revokeObjectURL(assetToRemove.url);
+            }
+
             const filtered = prev.filter((a) => a.id !== assetId);
+
             if (onAssetsChange) onAssetsChange(filtered);
+
+            return filtered;
+        });
+    };
+
             return filtered;
         });
     };
